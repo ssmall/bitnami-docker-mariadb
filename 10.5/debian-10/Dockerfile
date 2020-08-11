@@ -1,8 +1,7 @@
-FROM docker.io/bitnami/minideb:buster
-LABEL maintainer "Bitnami <containers@bitnami.com>"
-
+FROM docker.io/debian:buster-slim
+ARG ARCH
 ENV HOME="/" \
-    OS_ARCH="amd64" \
+    OS_ARCH="${ARCH}" \
     OS_FLAVOUR="debian-10" \
     OS_NAME="linux"
 
