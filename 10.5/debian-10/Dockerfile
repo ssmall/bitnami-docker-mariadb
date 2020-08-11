@@ -1,4 +1,4 @@
-ARG TARGETARCH=
+ARG TARGETARCH
 FROM ${TARGETARCH}/docker.io/debian:buster
 ENV HOME="/" \
     OS_ARCH="${TARGETARCH}" \
