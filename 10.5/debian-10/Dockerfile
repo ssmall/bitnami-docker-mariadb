@@ -1,4 +1,4 @@
-FROM docker.io/debian:buster-slim
+FROM docker.io/debian:buster
 ARG ARCH
 ENV HOME="/" \
     OS_ARCH="${ARCH}" \
