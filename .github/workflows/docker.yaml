@@ -1,0 +1,23 @@
+name: build multiarch image
+
+on:
+  push:
+    branches: multiarch-builds
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v2
+      - name: install buildx
+        id: buildx
+        uses: crazy-max/ghaction-docker-buildx@v1
+        with:
+          version: latest
+      - name: build the image
+        working-directory: 10.5/debian-10/
+        run: |
+          docker buildx build \
+            --tag ssmall/bitnami-mariadb:10.5-debian-10 \
+            --platform linux/amd64,linux/arm/v7,linux/arm64 . 
