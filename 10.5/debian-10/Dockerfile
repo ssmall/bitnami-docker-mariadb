@@ -1,7 +1,7 @@
-ARG ARCH
-FROM ${ARCH}/docker.io/debian:buster
+FROM docker.io/debian:buster
+ARG TARGETARCH
 ENV HOME="/" \
-    OS_ARCH="${ARCH}" \
+    OS_ARCH="${TARGETARCH}" \
     OS_FLAVOUR="debian-10" \
     OS_NAME="linux"
 
